@@ -1,4 +1,4 @@
-# COCO ResNet Project
+# Quantization Project
 
 This project implements three different ResNet models for the COCO dataset: classification, object detection, and image segmentation. The goal is to explore various quantization methods. MLFlow is utilized for experiment tracking.
 ## Project Structure
