@@ -9,6 +9,14 @@ __pycache__/
 data/*
 
 
+mlruns/*
+mlruns/.trash/
+mlflow.db
+
+*.pth
+*.png
+*.txt
+
 .Python
 build/
 develop-eggs/
