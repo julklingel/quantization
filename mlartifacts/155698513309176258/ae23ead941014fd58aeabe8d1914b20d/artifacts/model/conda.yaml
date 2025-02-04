@@ -1,0 +1,17 @@
+channels:
+- conda-forge
+dependencies:
+- python=3.12.3
+- pip<=24.2
+- pip:
+  - mlflow==2.19.0
+  - cloudpickle==3.1.1
+  - jaraco-collections==5.1.0
+  - numpy==1.26.4
+  - packaging==24.2
+  - pandas==2.2.2
+  - pyyaml==6.0.2
+  - torch==2.5.1
+  - torchvision==0.20.1
+  - triton==3.1.0
+name: mlflow-env

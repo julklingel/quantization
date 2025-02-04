@@ -69,7 +69,7 @@ quantization
 
 MLflow is used for tracking experiments. Ensure that the MLflow server is running before executing training scripts or notebooks. You can start the server with:
 ```
-mlflow ui
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns
 ```
 
 ## Goals
