@@ -55,13 +55,11 @@ def train_detection(net, trainloader, valloader, device, num_epochs, patience=5)
         if avg_val_loss < best_val_loss:
             best_val_loss = avg_val_loss
             epochs_no_improve = 0
-            torch.save(net.state_dict(), 'best_model.pth')
         else:
             epochs_no_improve += 1
 
         if epochs_no_improve >= patience:
             print(f'Early stopping at epoch {epoch+1}')
-            net.load_state_dict(torch.load('best_model.pth'))
             break
 
     return net

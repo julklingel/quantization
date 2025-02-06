@@ -9,6 +9,16 @@ import mlflow.pytorch
 from models.classification.resnet_classification import Resnet18_Classification
 from evaluation.classification.eval_classification import evaluate_model
 
+import os
+import torch
+import torch.optim as optim
+import torch.nn as nn
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+import mlflow
+import mlflow.pytorch
+from models.classification.resnet_classification import Resnet18_Classification
+from evaluation.classification.eval_classification import evaluate_model
 
 def train_classification(net, trainloader, valloader, device, num_epochs, patience=3):
     criterion = nn.CrossEntropyLoss()
@@ -20,8 +30,8 @@ def train_classification(net, trainloader, valloader, device, num_epochs, patien
     for epoch in range(num_epochs):
         net.train()
         running_loss = 0.0
-        for i, data in enumerate(trainloader, 0):
-            inputs, labels = data[0].to(device), data[1].to(device)
+        for i, (inputs, labels) in enumerate(trainloader, 0):
+            inputs, labels = inputs.to(device), labels.to(device)
             optimizer.zero_grad()
             outputs = net(inputs)
             loss = criterion(outputs, labels)
